@@ -1,5 +1,3 @@
 # Pixelworlds-Stealer
 
-**Made in C#**
-
-**Tried to keep the code clean and simple**
+**Note, Its only made for educational purposes.**
